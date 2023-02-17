@@ -17,6 +17,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/node-fetch": "^2.6.2",
+    "node-fetch": "^3.3.0",
     "probot": "^12.2.4"
   },
   "devDependencies": {
