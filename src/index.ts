@@ -25,7 +25,7 @@ export = (app: Probot) => {
             // context.log.debug(response.data.content)
             context.log.debug(JSON.stringify(data))
             // const res = await fetch('https://dev-smp.loca.lt/webhooks/config', {
-            const res = await fetch('http://localhost:8000/webhooks/config', {
+            const res = await fetch('http://35.200.227.193/webhooks/config', {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
