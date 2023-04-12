@@ -12,6 +12,8 @@ fi
 
 
 docker run -itd --rm -p 3000:3000 \
-    --env-file .env \
     -v ./smp-bot.private-key.pem:/usr/src/smp-bot.private-key.pem \
+    -l smp-bot \
+    --env-file .env \
+    --network developer-service_default \
     -e PRIVATE_KEY_PATH=/usr/src/smp-bot.private-key.pem smp/bot
