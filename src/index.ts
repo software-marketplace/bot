@@ -1,5 +1,5 @@
 import { Probot } from "probot";
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
 export = (app: Probot) => {
     app.on("issues.opened", async (context) => {
