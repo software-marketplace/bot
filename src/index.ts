@@ -1,7 +1,10 @@
 import { Probot } from "probot";
 import fetch from "node-fetch";
 
+
 export = (app: Probot) => {
+    const backendUrl = process.env.BACKEND_URL ?? "http://localhost:8000"
+
     app.on("issues.opened", async (context) => {
         const issueComment = context.issue({
             body: "Thanks for opening this issue!",
@@ -26,7 +29,7 @@ export = (app: Probot) => {
             // context.log.debug(response.data.content)
             context.log.debug(JSON.stringify(data))
             // const res = await fetch('https://dev-smp.loca.lt/webhooks/config', {
-            const res = await fetch('http://35.200.227.193/webhooks/config', {
+            const res = await fetch(`${backendUrl}/webhooks/config`, {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
