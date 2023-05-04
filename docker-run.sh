@@ -11,7 +11,7 @@ if [[ ! -f smp-bot.private-key.pem ]]; then
 fi
 
 
-docker run -itd --rm -p 3000:3000 \
+docker run -itd --rm -p 3032:3000 \
     -v ./smp-bot.private-key.pem:/usr/src/smp-bot.private-key.pem \
     -l smp-bot \
     --env-file .env \
